@@ -23,45 +23,45 @@ function Header() {
       src: "/icons/facebook.svg",
       alt: "Facebook",
       link: "https://www.facebook.com",
-      bgColor: "bg-white",
+      active: false
     },
     {
       src: "/icons/x.svg",
       alt: "Twitter",
       link: "https://www.twitter.com",
-      bgColor: "bg-gray-900",
+      active: true
     },
     {
       src: "/icons/linkedin.svg",
       alt: "LinkedIn",
       link: "https://www.linkedin.com",
-      bgColor: "bg-white",
+      active: false
     },
     {
       src: "/icons/instagram.svg",
       alt: "Instagram",
       link: "https://www.instagram.com",
-      bgColor: "bg-white",
+      active: false
     },
     {
       src: "/icons/internet.svg",
       alt: "Website",
       link: "https://www.example.com",
-      bgColor: "bg-white",
+      active: false
     },
   ];
 
   return (
-    <div className="w-full py-9 px-40 flex justify-between items-center">
+    <div className="w-full py-9 px-40 flex items-center">
       {/* Nav */}
-      <div className="flex gap-6 my-auto">
+      <div className="flex gap-5">
         {navs.map((nav, index) => (
           <Nav key={index} title={nav.title} value={nav.value} />
         ))}
       </div>
 
       {/* Header Middle Heading  */}
-      <div className="text-center">
+      <div className="text-center m-auto">
         <h5
           className={`${cardo.className} text-gray-900 font-bold text-2xl leading-8`}
         >
@@ -75,7 +75,6 @@ function Header() {
       </div>
 
       {/* Social Media Card's */}
-
       <div className="flex gap-2.5">
         {socialMediaLinks.map((icon, index) => (
           <SocialMediaIcon
@@ -83,7 +82,7 @@ function Header() {
             src={icon.src}
             alt={icon.alt}
             link={icon.link}
-            bgColor={icon.bgColor}
+            isActive={icon.active}
           />
         ))}
         

@@ -13,5 +13,5 @@ export const roboto_mono = Roboto_Mono({
 export const cardo = Cardo({
   subsets: ["latin"],
   variable: "--font-cardo",
-  weight: '700',
+  weight: ["400", "700"],
 });
