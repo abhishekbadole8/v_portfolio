@@ -19,6 +19,33 @@ function Home() {
     { name: "Tumblr", path: "/tumblr.svg" },
   ];
 
+  const workProcess = [
+    {
+      title: "Introduction",
+      context:
+        "Vestibulum tempor enim metus, quis tepor urna facilisis sed. Sed nibh ipsum, molestie cursus dolor vitae.",
+      path: "/Confetti.svg",
+    },
+    {
+      title: "UX Design",
+      context:
+        "Vestibulum tempor enim metus, quis tepor urna facilisis sed. Sed nibh ipsum, molestie cursus dolor vitae.",
+      path: "/UserCircle.svg",
+    },
+    {
+      title: "UI Design",
+      context:
+        "Vestibulum tempor enim metus, quis tepor urna facilisis sed. Sed nibh ipsum, molestie cursus dolor vitae.",
+      path: "/Crown.svg",
+    },
+    {
+      title: "Delivery",
+      context:
+        "Vestibulum tempor enim metus, quis tepor urna facilisis sed. Sed nibh ipsum, molestie cursus dolor vitae.",
+      path: "/Package.svg",
+    },
+  ];
+
   return (
     <div>
       <div className="w-screen h-screen bg-hero-background">
@@ -62,7 +89,7 @@ function Home() {
       </div>
 
       {/* About Page */}
-      <div className="py-10 px-40 relative">
+      <div className="pt-12 pb-20 px-40 relative">
         <div className="flex justify-between ">
           {/* First column */}
           <div className="flex-none w-1/4">
@@ -78,7 +105,7 @@ function Home() {
               >
                 Vestibulum tempor enim metus, quis tempor urna facilisis sed.
                 Sed nibh ipsum, molestie cursus dolor vitae, molestie vestibulum
-                quam.{" "}
+                quam.
               </p>
             </div>
 
@@ -170,6 +197,56 @@ function Home() {
                 width={113}
                 height={24}
               />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* My work Process */}
+      <div className="bg-gray-50 text-center py-20 px-40">
+        <h3
+          className={`${cardo.className} text-gray-900 font-normal text-5xl leading-16 mb-8 `}
+        >
+          My work process
+        </h3>
+        <p
+          className={`${inter.className} w-2/6 text-gray-500 font-normal text-base leading-6 mx-auto`}
+        >
+          Vestibulum tempor enim metus, quis tempor urna facilisis sed. Sed nibh
+          ipsum, molestie cursus dolor vitae, molestie vestibulum quam.
+        </p>
+
+        <div className="mt-16 flex gap-6 text-left">
+          {workProcess.map((work, index) => (
+            <div
+              key={index}
+              className={`${index % 2 === 0 ? "mt-12 " : "mb-12"} bg-white p-7`}
+            >
+              <div className="flex justify-between">
+                <Image
+                  src={`/icons/${work.path}`}
+                  alt="icon"
+                  width={43}
+                  height={43}
+                  className="mb-auto"
+                />
+
+                <h1
+                  className={`${cardo.className} text-hero-background font-bold text-6xl leading-16`}
+                >
+                  0{index + 1}
+                </h1>
+              </div>
+              <h5
+                className={`${cardo.className} text-gray-900 font-bold text-2xl leading-8  my-4`}
+              >
+                {work.title}
+              </h5>
+              <p
+                className={`${inter.className} text-gray-500 font-normal text-sm leading-5 `}
+              >
+                {work.context}
+              </p>
             </div>
           ))}
         </div>
